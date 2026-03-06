@@ -1,0 +1,27 @@
+import  math
+
+
+def kv_tenglama(a,b,c):
+    if a == 0:
+        return "Bu sonlar kvadrat tenglamaning koeffitsiyenti emas "
+    D = b ** 2 - 4 * a * c
+    if D>0:
+       x1 = ((-b + math.sqrt(D) )/( 2 * a))
+       x2 = ((-b - math.sqrt(D)) / (2 * a))
+       return f"  Tenglamani ildizlari x1={x1} va x2={x2} "
+    elif D==0:
+       x= (-b /( 2 * a))
+       return f"Tenglamani ildizi bitta x={x} "
+    else:
+        return " Tenglamani ildizlari haqiqiy son emas "
+
+while True:
+    try:
+
+      a=int(input("a koeffitsiyentni kiriting :"))
+      b=int(input("b koeffitsiyentni kiriting:"))
+      c=int(input("c koeffitsiyentni kiriting:"))
+      print(kv_tenglama(a,b, c))
+      break
+    except ValueError:
+      print("Harf kiritish mumkin emas!")
